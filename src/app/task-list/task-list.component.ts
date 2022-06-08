@@ -28,7 +28,10 @@ export class TaskListComponent implements OnInit {
 	}
   }
   
-  done(taskIdx: number){
-	  this.remove.emit(taskIdx);
+  done(e:Event){
+    const btn = e.target as HTMLButtonElement
+    const parent = btn.parentElement
+    parent.style.textDecoration = parent.style.textDecoration==='line-through'?'none':'line-through'
+    
   }
 }
